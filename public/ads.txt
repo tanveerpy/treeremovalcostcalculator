@@ -1,0 +1,3 @@
+# ads.txt for ArborCalc
+# Replace with your actual publisher ID after approval
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
