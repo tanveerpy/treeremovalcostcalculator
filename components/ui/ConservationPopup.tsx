@@ -45,7 +45,7 @@ export default function ConservationPopup() {
                         <div className="relative h-[110px] md:h-[120px] w-full bg-nature-900 overflow-hidden flex-shrink-0">
                             <div className="absolute inset-0">
                                 <Image
-                                    src="/artifacts/sad_tree_conservation_webp.png"
+                                    src="/treeremovalcostcalculator/artifacts/sad_tree_conservation_webp.png"
                                     alt="Sad Tree"
                                     fill
                                     className="object-cover"
