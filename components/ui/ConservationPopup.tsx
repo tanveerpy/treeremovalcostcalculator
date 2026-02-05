@@ -71,7 +71,7 @@ export default function ConservationPopup() {
 
                             <div className="space-y-1 text-nature-300 text-[10px] md:text-xs leading-relaxed mb-4 font-medium italic max-w-[85%] mx-auto">
                                 <p>
-                                    "I breathe the air you exhale, and I give it back as the oxygen that fills your lungs."
+                                    We remove over <strong>50,000 trees annually</strong>. &quot;It's rarely the tree's fault—usually, it's poor planning.&quot;
                                 </p>
                                 <p className="text-nature-100 font-bold not-italic">
                                     Before you calculate my ending, please consider the value of my life.
