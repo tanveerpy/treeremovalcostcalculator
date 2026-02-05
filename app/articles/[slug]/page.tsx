@@ -5,9 +5,16 @@ import Link from 'next/link';
 import { ChevronRight, Clock, Calendar, User, Info, AlertTriangle } from 'lucide-react';
 import AdSlot from '@/components/monetization/AdSlot';
 import { Metadata } from 'next';
+import { articles } from '@/lib/articles';
 
 interface PageProps {
     params: { slug: string };
+}
+
+export async function generateStaticParams() {
+    return articles.map((article) => ({
+        slug: article.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -40,22 +47,7 @@ export default async function ArticlePage({ params }: PageProps) {
     const source = await fs.readFile(filePath, 'utf8');
 
     // Related articles logic
-    const allArticles = [
-        { slug: "why-tree-removal-costs-vary", title: "Cost Factors" },
-        { slug: "tree-removal-safety", title: "Safety Guide" },
-        { slug: "usa-tree-permits", title: "USA Permits" },
-        { slug: "uk-tree-surgeon-costs", title: "UK Costs" },
-        { slug: "canada-tree-removal", title: "Canada Guide" },
-        { slug: "identifying-hazardous-trees", title: "Hazard Detection" },
-        { slug: "importance-of-stump-grinding", title: "Stump Grinding" },
-        { slug: "crane-assisted-tree-removal", title: "Crane Removals" },
-        { slug: "power-lines-and-tree-removal", title: "Power Line Safety" },
-        { slug: "hiring-a-certified-arborist", title: "Hiring Checklist" },
-        { slug: "dead-vs-healthy-tree-cost", title: "Dead Tree Costs" },
-        { slug: "fallen-tree-insurance-claims", title: "Insurance Info" },
-    ];
-
-    const related = allArticles.filter(a => a.slug !== params.slug).slice(0, 4);
+    const related = articles.filter(a => a.slug !== params.slug).slice(0, 4);
 
     return (
         <article className="min-h-screen bg-nature-950">
